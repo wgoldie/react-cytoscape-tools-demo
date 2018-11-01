@@ -25,7 +25,7 @@ text-decoration: none;
 
 const Header = () => (
   <HeaderWrapper>
-    <HeaderTitle>react-cytoscape-tools demos</HeaderTitle>
+    <HeaderTitle><a href="https://github.com/wgoldie/react-cytoscape-tools">react-cytoscape-tools</a> demos</HeaderTitle>
     <HeaderList>
       { Demos.map((Demo) => (
         <HeaderItem key={Demo.path}>

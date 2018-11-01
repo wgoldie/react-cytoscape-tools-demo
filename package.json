@@ -2,7 +2,7 @@
   "name": "react-cytoscape-tools-example",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wgoldie.github.io/react-cytoscape-tools-demos",
+  "homepage": "http://willgoldie.me/react-cytoscape-tools-demo",
   "dependencies": {
     "cytoscape": "^3.2.19",
     "prop-types": "^15.6.2",
