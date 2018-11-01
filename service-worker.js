@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-cytoscape-tools-demo/precache-manifest.2f1f7ed18dc4f6fec508cacf0c7c7133.js"
+  "/react-cytoscape-tools-demo/precache-manifest.04b6525e14edf709991e39579880e38a.js"
 );
 
 workbox.clientsClaim();
