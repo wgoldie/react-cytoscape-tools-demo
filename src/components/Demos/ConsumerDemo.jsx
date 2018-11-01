@@ -7,15 +7,9 @@ import {
 } from 'react-cytoscape-tools';
 
 import styled from 'styled-components';
-import { Mat } from './style';
+import { Mat, AddButton, SourceButton } from './style';
 import defaultJSON from './default';
 import uuidv4 from 'uuid/v4';
-
-const AddButton = styled.button`
-display: absolute;
-left: 0;
-top: 0;
-`;
 
 const GraphStateWindow = styled.code`
 font-family: Consolas, Courier, monospace;
@@ -27,11 +21,6 @@ white-space: pre-wrap;
 overflow: scroll;
 height: 100%;
 width: 100%;
-`;
-
-const HalfMat = styled(Mat)`
-overflow: hidden;
-height: 50%;
 `;
 
 class ConsumerDemo extends React.Component {
@@ -69,7 +58,7 @@ class ConsumerDemo extends React.Component {
   render () {
     return (
       <CytoscapeProvider>
-        <HalfMat>
+        <Mat half>
           <AddButton
             role="button"
             onClick={this.addNode}
@@ -80,9 +69,13 @@ class ConsumerDemo extends React.Component {
             cyInitJSON={defaultJSON}
             cyJSON={this.state.cyJSON}
             style={{ 'backgroundColor': '#111', height: '100%', width: '100%' }}
-          />
-        </HalfMat>
-        <HalfMat>
+          >
+            <SourceButton
+              href="https://github.com/wgoldie/react-cytoscape-tools-demo/blob/master/src/components/Demos/ConsumerDemo.jsx"
+            />
+          </CytoscapeView>
+        </Mat>
+        <Mat half>
           <GraphStateWindow>
             <CytoscapeGate>
               <CytoscapeContext.Consumer>
@@ -92,7 +85,7 @@ class ConsumerDemo extends React.Component {
               </CytoscapeContext.Consumer>
             </CytoscapeGate>
           </GraphStateWindow>
-        </HalfMat>
+        </Mat>
       </CytoscapeProvider>
     );
   }

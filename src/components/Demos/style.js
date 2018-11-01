@@ -1,10 +1,44 @@
+import React from 'react';
 import styled from 'styled-components';
 
-export const Mat = styled.div`
-display: relative;
-padding: 30px;
-height: 100%;
-width: 100%;
+const overCyto = () => ` 
+display: inline-block;
+padding: 20px;
+background-color: rgba(255,255,255,0.75);
+text-decoration: none;
+z-index: 1000;
+position: absolute;
 `;
 
+const SourceLink = styled.a`
+${overCyto}
+right: 0;
+top: 0;
+`;
 
+export const SourceButton = ({ href }) => <SourceLink href={href} target="_blank">Source (Github)</SourceLink>;
+
+export const AddButton = styled.button`
+border: none;
+${overCyto}
+left: 0;
+top: 0;
+`;
+
+const MatOuter = styled.div`
+padding: 30px;
+width: 100%;
+height: ${props => props.half ? "50%" : "100%" };
+overflow: hidden;
+`;
+
+const MatInner = styled.div`
+position: relative;
+width: 100%;
+height: 100%;
+overflow: hidden;
+`;
+
+export const Mat = ({ children, half = false }) => (
+  <MatOuter half={half}><MatInner half={half}>{children}</MatInner></MatOuter>
+);
