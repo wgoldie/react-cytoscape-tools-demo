@@ -1,6 +1,5 @@
 import React from 'react';
 import { CytoscapeView, CytoscapeProvider } from 'react-cytoscape-tools';
-import styled from 'styled-components';
 import { Mat, SourceButton, AddButton } from './style';
 import defaultJSON from './default';
 import uuidv4 from 'uuid/v4';

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Router from './Router';
 import Header from './Header';
@@ -11,16 +11,12 @@ display: flex;
 flex-direction: column;
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <AppWrapper>
-        <Router>
-          <Header />
-        </Router>
-      </AppWrapper>
-    );
-  }
-}
+const App = () => (
+  <AppWrapper>
+    <Router>
+      <Header />
+    </Router>
+  </AppWrapper>
+);
 
 export default App;

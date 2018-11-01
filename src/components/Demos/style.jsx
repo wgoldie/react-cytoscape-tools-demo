@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const overCyto = () => ` 
@@ -18,6 +19,14 @@ top: 0;
 
 export const SourceButton = ({ href }) => <SourceLink href={href} target="_blank">Source (Github)</SourceLink>;
 
+SourceButton.defaultProps = {
+  href: '',
+};
+
+SourceButton.propTypes = {
+  href: PropTypes.string,
+};
+
 export const AddButton = styled.button`
 border: none;
 ${overCyto}
@@ -28,7 +37,7 @@ top: 0;
 const MatOuter = styled.div`
 padding: 30px;
 width: 100%;
-height: ${props => props.half ? "50%" : "100%" };
+height: ${props => (props.half ? '50%' : '100%')};
 overflow: hidden;
 `;
 
@@ -39,6 +48,16 @@ height: 100%;
 overflow: hidden;
 `;
 
-export const Mat = ({ children, half = false }) => (
+export const Mat = ({ children, half }) => (
   <MatOuter half={half}><MatInner half={half}>{children}</MatInner></MatOuter>
 );
+
+Mat.defaultProps = {
+  children: null,
+  half: false,
+};
+
+Mat.propTypes = {
+  children: PropTypes.node,
+  half: PropTypes.bool,
+};
