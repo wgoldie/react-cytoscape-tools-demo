@@ -7,7 +7,7 @@
     "cytoscape": "^3.2.19",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
-    "react-cytoscape-tools": "file:../react-cytoscape-tools",
+    "react-cytoscape-tools": "^0.0.1",
     "react-dom": "^16.6.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
