@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/react-cytoscape-tools-demo/static/css/main.0f6c7a5f.chunk.css"
   },
   {
-    "revision": "3df34aee0c21b6f3e5611034c68f30d0",
+    "revision": "745c3fd44198c45f4ecfb47a837c1e69",
     "url": "/react-cytoscape-tools-demo/index.html"
   }
 ];
