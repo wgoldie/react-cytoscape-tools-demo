@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-cytoscape-tools-demos/precache-manifest.ee6db7c8c4db98fd740e5c457eea8df0.js"
+  "/react-cytoscape-tools-demo/precache-manifest.2f1f7ed18dc4f6fec508cacf0c7c7133.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/react-cytoscape-tools-demos/index.html", {
+workbox.routing.registerNavigationRoute("/react-cytoscape-tools-demo/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
