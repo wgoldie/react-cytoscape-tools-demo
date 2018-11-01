@@ -5,7 +5,7 @@
   "dependencies": {
     "cytoscape": "^3.2.19",
     "react": "^16.6.0",
-    "react-cytoscape-tools": "file:./../react-cytoscape-tools/",
+    "react-cytoscape-tools": "github.com/wgoldie/react-cytoscape-tools",
     "react-dom": "^16.6.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
