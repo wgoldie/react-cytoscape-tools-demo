@@ -1,5 +1,11 @@
 import React from 'react';
-import { CytoscapeView, CytoscapeProvider } from 'react-cytoscape-tools';
+import {
+  CytoscapeGate,
+  CytoscapeContext,
+  CytoscapeView,
+  CytoscapeProvider
+} from 'react-cytoscape-tools';
+
 import styled from 'styled-components';
 import { Mat } from './style';
 import defaultJSON from './default';
@@ -8,10 +14,26 @@ import uuidv4 from 'uuid/v4';
 const AddButton = styled.button`
 display: absolute;
 left: 0;
-right: 0;
+top: 0;
 `;
 
-class Manipulation extends React.Component {
+const GraphStateWindow = styled.code`
+display: block;
+color: #fff;
+background: rgba(1,1,1,0.25);
+white-space: pre-line;
+white-space: pre-wrap;
+overflow: scroll;
+height: 100%;
+width: 100%;
+`;
+
+const HalfMat = styled(Mat)`
+overflow: hidden;
+height: 50%;
+`;
+
+class ConsumerDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = { cyJSON: defaultJSON, lastNode: 'd', lastPosition: 0 };
@@ -44,30 +66,38 @@ class Manipulation extends React.Component {
   }
 
   render () {
-    console.log(this.state.cyJSON);
-    console.log('^^^^ passed prop');
     return (
       <CytoscapeProvider>
-        <Mat>
+        <HalfMat>
+          <AddButton
+            role="button"
+            onClick={this.addNode}
+          >
+            Add node
+          </AddButton>
           <CytoscapeView
             cyInitJSON={defaultJSON}
             cyJSON={this.state.cyJSON}
             style={{ 'backgroundColor': '#111', height: '100%', width: '100%' }}
-          >
-            <AddButton
-              role="button"
-              onClick={this.addNode}
-            >
-              Add node
-            </AddButton>
-          </CytoscapeView>
-        </Mat>
+          />
+        </HalfMat>
+        <HalfMat>
+          <GraphStateWindow>
+            <CytoscapeGate>
+              <CytoscapeContext.Consumer>
+                {
+                  ({ cy }) => JSON.stringify(cy.json(), null, 2)
+                }
+              </CytoscapeContext.Consumer>
+            </CytoscapeGate>
+          </GraphStateWindow>
+        </HalfMat>
       </CytoscapeProvider>
     );
   }
 }
 
-Manipulation.path = 'manipulation';
-Manipulation.title = 'Manipulation with <CytoscapeView>';
+ConsumerDemo.path = 'consumer';
+ConsumerDemo.title = 'Consuming Cytoscape state with <CytoscapeContext.Consumer>';
 
-export default Manipulation;
+export default ConsumerDemo;

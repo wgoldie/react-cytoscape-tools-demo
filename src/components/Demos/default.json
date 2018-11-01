@@ -5,14 +5,13 @@
     { "data": { "id": "c" } },
     { "data": { "id": "d" } },
     { "data": { "source": "a", "target": "c" } },
-    { "data": { "source": "b", "target": "c" } },
+    {  "data": { "source": "b", "target": "c" } },
     { "data": { "source": "c", "target": "d" } }
   ],
   "layout": {
     "name": "breadthfirst"
   },
   "style": [
-    { "selector": "node", "style": { "label": "data(id)" } }
   ]
 }
 

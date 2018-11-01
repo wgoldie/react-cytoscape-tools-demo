@@ -6,6 +6,7 @@ import Demos from './Demos';
 const DemoWrapper = styled.div`
 flex: 5;
 background-color: #222;
+overflow: hidden;
 `;
 
 const AppRouter = ({ children }) => (
