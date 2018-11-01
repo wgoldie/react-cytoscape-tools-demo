@@ -18,6 +18,7 @@ top: 0;
 `;
 
 const GraphStateWindow = styled.code`
+font-family: Consolas, Courier, monospace;
 display: block;
 color: #fff;
 background: rgba(1,1,1,0.25);

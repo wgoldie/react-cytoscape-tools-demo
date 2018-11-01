@@ -4,12 +4,24 @@ import styled from 'styled-components';
 import Demos from './Demos';
 
 const HeaderWrapper = styled.div`
-flex: 1;
+flex: 0.8;
 `;
-const HeaderTitle = styled.h1``;
+const HeaderTitle = styled.h1`
+font-size: 200%;
+display: block;
+padding: 20px;
+`;
 const HeaderList = styled.ul``;
-const HeaderItem = styled.li``;
-const HeaderLink = styled(Link)``;
+const HeaderItem = styled.li`
+display: inline-block;
+border: 1px solid #000;
+padding: 5px;
+margin: 5px;
+`;
+
+const HeaderLink = styled(Link)`
+text-decoration: none;
+`;
 
 const Header = () => (
   <HeaderWrapper>
