@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
 import Demos from './Demos';
 
-const Router = () => (
+const DemoWrapper = styled.div`
+flex: 5;
+background-color: #222;
+`;
+
+const AppRouter = ({ children }) => (
   <Router>
-    <Switch>
-      {
-        Demos.map(Demo => <Route path={Demo.path} component={Demo} />)
-      }
-    </Switch>
+    <Fragment>
+      { children }
+      <DemoWrapper>
+        <Switch>
+          {
+            Demos.map(Demo => (
+              <Route
+                key={Demo.path}
+                path={`/${Demo.path}`}
+                component={Demo}
+              />)
+            )
+          }
+        </Switch>
+      </DemoWrapper>
+    </Fragment>
   </Router>
 );
 
-export default Router;
+export default AppRouter;

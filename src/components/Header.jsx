@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Demos from './Demos';
 
-const HeaderWrapper = styled.div``;
+const HeaderWrapper = styled.div`
+flex: 1;
+`;
 const HeaderTitle = styled.h1``;
 const HeaderList = styled.ul``;
 const HeaderItem = styled.li``;
